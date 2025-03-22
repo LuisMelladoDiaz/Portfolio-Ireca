@@ -1,17 +1,16 @@
 import type { Metadata } from 'next';
-import { Press_Start_2P } from 'next/font/google';
+import { Inter } from 'next/font/google'; // Cambiamos la fuente a algo más adecuado para arte
 import './globals.css';
 import ClientLayout from '@/components/ClientLayout';
 
-const pressStart2P = Press_Start_2P({
-  weight: '400',
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-pixel',
+  variable: '--font-inter',
 });
 
 export const metadata: Metadata = {
-  title: 'Luis Mellado | Game Dev Portfolio',
-  description: 'Game Developer and Software Engineer Portfolio',
+  title: 'Ireca | Portfolio de Arte',
+  description: 'Arte para gestionar el olvido y entender (o no) los recuerdos.',
 };
 
 export default function RootLayout({
@@ -20,12 +19,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={pressStart2P.variable}>
-      <body className="flex flex-col min-h-screen bg-game-primary text-white">
+    <html lang="es" className={inter.variable}>
+      <body className="flex flex-col min-h-screen bg-white text-gray-900">
         <ClientLayout>
           {children}
         </ClientLayout>
       </body>
     </html>
   );
-} 
+}

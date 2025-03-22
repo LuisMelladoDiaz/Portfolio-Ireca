@@ -1,28 +1,27 @@
 'use client';
 
-import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { LanguageProvider } from '@/context/LanguageContext';
-import LanguageSwitch from '@/components/LanguageSwitch';
+import { motion } from 'framer-motion';
 
-export default function ClientLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
-    <LanguageProvider>
+    <>
+      {/* Navbar */}
       <Navbar />
-      <div className="flex-grow flex justify-center w-full">
-        <div className="w-[60%] max-w-5xl px-4 py-20">
-          {children}
-        </div>
-      </div>
+
+      {/* Main Content */}
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        className="flex-grow"
+      >
+        {children}
+      </motion.main>
+
+      {/* Footer */}
       <Footer />
-      <div className="fixed bottom-4 right-4">
-        <LanguageSwitch />
-      </div>
-    </LanguageProvider>
+    </>
   );
-} 
+}

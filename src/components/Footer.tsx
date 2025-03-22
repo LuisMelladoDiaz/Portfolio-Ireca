@@ -1,40 +1,30 @@
 'use client';
 
-import React from 'react';
-import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { FaInstagram, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   const socialLinks = [
     {
-      name: 'GitHub',
-      url: 'https://github.com/LuisMelladoDiaz',
-      icon: <FaGithub className="w-6 h-6" />
+      name: 'Instagram',
+      url: 'https://www.instagram.com/ireca_art/',
+      icon: <FaInstagram className="w-6 h-6" />,
     },
     {
       name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/mellado-diaz-luis/',
-      icon: <FaLinkedin className="w-6 h-6" />
+      url: 'https://www.linkedin.com/in/ireca-art/',
+      icon: <FaLinkedin className="w-6 h-6" />,
     },
     {
-      name: 'Instagram',
-      url: 'https://www.instagram.com/luinki2003/',
-      icon: <FaInstagram className="w-6 h-6" />
-    }
+      name: 'Email',
+      url: 'mailto:ireca.art@gmail.com',
+      icon: <FaEnvelope className="w-6 h-6" />,
+    },
   ];
 
   return (
-    <footer className="w-full bg-game-secondary border-t border-game-accent py-6">
+    <footer className="w-full bg-card border-t border-gray-200 py-6 shadow-sm">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex flex-col items-center space-y-4">
-          {/* Contact Info */}
-          <div className="text-center">
-            <p className="text-game-text">Contact me</p>
-            <a href="mailto:contact@luismellado.com" className="text-white hover:text-game-text transition-colors">
-              melladodiazluis@gmail.com
-            </a>
-          </div>
-
           {/* Social Links */}
           <div className="flex space-x-6">
             {socialLinks.map((link) => (
@@ -43,7 +33,7 @@ const Footer = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white hover:text-game-text transition-colors"
+                className="text-text hover:text-accent transition-colors"
                 aria-label={link.name}
               >
                 {link.icon}
@@ -52,8 +42,8 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="text-sm text-white/60">
-            © {new Date().getFullYear()} Luis Mellado. All rights reserved.
+          <div className="text-sm text-gray-500">
+            © {new Date().getFullYear()} Ireca. Todos los derechos reservados.
           </div>
         </div>
       </div>
@@ -61,4 +51,4 @@ const Footer = () => {
   );
 };
 
-export default Footer; 
+export default Footer;
