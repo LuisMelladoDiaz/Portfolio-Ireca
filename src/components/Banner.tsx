@@ -2,7 +2,7 @@
 
 export default function Banner() {
     return (
-        <div className="w-[1150px] h-[300px] bg-secondary mt-5 flex items-end justify-end p-5">
+        <div className="w-[1150px] h-[300px] bg-secondary mt-5 border-primary border-2 flex items-end justify-center p-5">
             <span className="text-2xl text-primary font-Ireca-Regular">
                 Arte para gestionar el olvido
             </span>
