@@ -1,46 +1,35 @@
 'use client';
 
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { Caveat } from "next/font/google"
+
+const caveat = Caveat({ subsets: ["latin"] })
 
 const Navbar = () => {
-  const pathname = usePathname();
-
-  const links = [
-    { name: 'Home', path: '/' },
-    { name: 'Statement', path: '/statement' },
-    { name: 'Selected Works', path: '/selected-works' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact', path: '/contact' },
-  ];
-
   return (
-    <nav className="fixed top-0 w-full bg-card border-b border-gray-200 z-50 shadow-sm">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
-          {/* Logo/Brand */}
-          <Link href="/" className="text-xl font-bold text-primary hover:text-accent transition-colors">
-            Ireca
+    <nav className="pt-6 px-8 flex justify-center mt-5">
+        <div className={`font-Ireca-Regular text-primary font-bold text-lg md:text-xl flex gap-2 md:gap-4 items-center`}>
+          <Link href="/" className="hover:underline text-primary">
+            Home
           </Link>
-
-          {/* Navigation Links */}
-          <ul className="hidden md:flex space-x-8">
-            {links.map((link) => (
-              <li key={link.path}>
-                <Link
-                  href={link.path}
-                  className={`text-text hover:text-accent transition-colors ${
-                    pathname === link.path ? 'font-bold text-primary' : ''
-                  }`}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <span>-</span>
+          <Link href="/statement" className="hover:underline text-primary">
+            Statement
+          </Link>
+          <span>-</span>
+          <Link href="/projects" className="hover:underline text-primary">
+            Projects
+          </Link>
+          <span>-</span>
+          <Link href="/about" className="hover:underline text-primary">
+            About
+          </Link>
+          <span>-</span>
+          <Link href="/contact" className="hover:underline text-primary">
+            Contact
+          </Link>
         </div>
-      </div>
-    </nav>
+      </nav>
   );
 };
 

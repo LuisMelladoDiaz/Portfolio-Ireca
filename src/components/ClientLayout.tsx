@@ -6,11 +6,10 @@ import { motion } from 'framer-motion';
 
 export default function ClientLayout({ children }: { children: React.ReactNode }) {
   return (
-    <>
-      {/* Navbar */}
+    <div className="mt-40">
       <Navbar />
 
-      {/* Main Content */}
+      {/* Main Content con animación */}
       <motion.main
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -22,6 +21,6 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
 
       {/* Footer */}
       <Footer />
-    </>
+    </div>
   );
 }

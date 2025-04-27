@@ -3,13 +3,19 @@
 @tailwind utilities;
 
 :root {
-  /* Paleta de colores inspirada en el mar */
-  --color-primary: #1A365D; /* Azul oscuro, como el mar profundo */
-  --color-secondary: #2C5282; /* Azul medio, como el océano */
-  --color-accent: #63B3ED; /* Azul claro, como el cielo sobre el mar */
-  --color-text: #2D3748; /* Gris oscuro para texto */
-  --color-background: #F7FAFC; /* Fondo claro, como la espuma del mar */
-  --color-card: #FFFFFF; /* Blanco para tarjetas y secciones */
+
+  --color-primary: #122c3b;
+  --color-secondary: #6db3ef;
+  --color-terciary: #1f5a7b ;
+
+  --color-comp1: #fe9e02;
+  --color-comp2: #d69b4c;
+
+
+  --color-accent: #000000;
+  --color-text: #2D3748;
+  --color-background: #F7FAFC;
+  --color-card: #FFFFFF;
 }
 
 /* Aplicar la paleta de colores a Tailwind */
@@ -17,10 +23,16 @@
   body {
     background-color: var(--color-background);
     color: var(--color-text);
-    font-family: 'Inter', sans-serif; /* Fuente principal */
+    font-family: 'Inter', sans-serif;
+    /* Fuente principal */
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--color-primary);
     font-weight: bold;
   }
@@ -54,4 +66,18 @@
   .btn:hover {
     background-color: var(--color-secondary);
   }
+
+  @font-face {
+    font-family: 'Ireca-Regular';
+    src: url('/fonts/Ireca-Regular.ttf') format('truetype');
+    /* .ttf */
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  /* Aplica la fuente globalmente */
+  body {
+    font-family: 'Ireca-Regular', sans-serif;
+  }
+
 }
